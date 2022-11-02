@@ -1,22 +1,12 @@
-import time
-
-import RPi.GPIO as GPIO
-from mfrc522 import SimpleMFRC522
-
-reader = SimpleMFRC522()
+from rfid_reader import rfid_reader
 
 
-def read_card():
-    card_id, text = reader.read()
+def read_card(card_id, text):
     print(card_id, text)
-    time.sleep(0.5)
 
 
 if __name__ == "__main__":
-    try:
-        while 1:
-            read_card()
-    except KeyboardInterrupt:
-        exit(1)
-    finally:
-        GPIO.cleanup()
+    rfid = rfid_reader()
+    rfid.on_new_card_read = read_card
+    rfid.read_rfid_card_forever_loop()
+
