@@ -1,6 +1,6 @@
 import time
 
-from RPi import GPIO
+from RPi.GPIO import GPIO
 
 
 def blink():
