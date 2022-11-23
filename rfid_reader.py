@@ -2,16 +2,21 @@ import time
 
 from mfrc522 import SimpleMFRC522
 
+import work_state
+
 
 class rfid_reader:
     reader = SimpleMFRC522()
     on_new_card_read = None
+    ws = None
 
-    def read_rfid_card_forever_loop(self):
+    def __init__(self, ws):
+        self.ws = ws
+
+    def read_rfid_card_forever_loop(self): # Зависает чтение карты
         text = ""
-        while not text.startswith("stop"):
-            card_id, text = self.reader.read()
-            if text.startswith("stop"):
-                break
-            self.on_new_card_read(card_id, text)
-            time.sleep(0.5)
+        card_id, text = self.reader.read()
+        if text.startswith("stop"):
+            self.ws.switch_off()
+            return
+        self.on_new_card_read(card_id, text)
