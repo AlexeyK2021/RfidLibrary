@@ -1,6 +1,7 @@
 import time
 
 import RPi.GPIO as GPIO
+from mfrc522 import MFRC522
 
 import work_state
 import work_state as ws
@@ -14,13 +15,14 @@ global db, ws
 
 
 def read_card(card_id, text):
+    global client_card_id, books_ids
     print(card_id, text)
     if card_id == client_card_id and len(books_ids) > 0:
         end_transaction()
+        return
 
     if card_id not in scanned_data_ids:
         scanned_data_ids.append(card_id)
-
     process_data()
 
 
@@ -38,8 +40,11 @@ def end_transaction():
         db.client_take_books(client_card_id, books_ids)
     elif ws.curr_state == ws.return_book:
         db.client_return_books(client_card_id, books_ids)
+
+    ws.curr_state = ws.waiting
     client_card_id = 0
-    books_ids = []
+    books_ids.clear()
+    scanned_data_ids.clear()
     print("Waiting next card")
 
 
@@ -52,9 +57,9 @@ def gpio_handling():
                 ws.return_button()
             elif ws.curr_state != ws.waiting:
                 rfid.read_rfid_card_forever_loop()
-            print(ws.curr_state)
             switch_leds()
-            time.sleep(0.3)
+            print(ws.curr_state)
+            time.sleep(0.5)
         on_shutdown()
     except KeyboardInterrupt:
         on_shutdown()

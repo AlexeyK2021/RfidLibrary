@@ -1278,12 +1278,17 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DataType>bigint|0s</DataType>
       <Position>3</Position>
     </column>
-    <index id="307" parent="303" name="PRIMARY">
+    <column id="307" parent="303" name="transaction_type">
+      <DataType>varchar(6)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="308" parent="303" name="PRIMARY">
       <ColNames>user_book_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="308" parent="303" name="PRIMARY">
+    <key id="309" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

@@ -32,7 +32,7 @@ class db_manager:
                 print(db)
 
     def client_take_books(self, client_card_id, books_card_ids):  # Клиент получает книги
-        query = """INSERT INTO user_book(user_card_id, book_card_id) VALUES (%s, %s);"""
+        query = """INSERT INTO user_book(user_card_id, book_card_id, transaction_type) VALUES (%s, %s, 'take');"""
         data = []
 
         for book in books_card_ids:
@@ -41,9 +41,14 @@ class db_manager:
         self.connection.cursor().executemany(query, data)
         self.connection.cursor().close()
         self.connection.commit()
-        print("all data added!")
 
     def client_return_books(self, client_card_id, books_card_ids):  # Клиент возвращает книги
-        query = ""
-        with self.connection.cursor() as cursor:
-            cursor.execute(query)
+        query = """INSERT INTO user_book(user_card_id, book_card_id, transaction_type) VALUES (%s, %s, 'return');"""
+        data = []
+
+        for book in books_card_ids:
+            data.append((client_card_id, book))
+
+        self.connection.cursor().executemany(query, data)
+        self.connection.cursor().close()
+        self.connection.commit()

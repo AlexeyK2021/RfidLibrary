@@ -13,7 +13,7 @@ class rfid_reader:
     def __init__(self, ws):
         self.ws = ws
 
-    def read_rfid_card_forever_loop(self): # Зависает чтение карты
+    def read_rfid_card_forever_loop(self):  # Зависает чтение карты
         text = ""
         card_id, text = self.reader.read()
         if text.startswith("stop"):
