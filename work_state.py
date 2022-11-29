@@ -1,5 +1,3 @@
-
-
 class work:
     waiting = 0
     take_book = 1
@@ -25,3 +23,6 @@ class work:
 
     def switch_off(self):
         self.curr_state = self.off
+
+    def switch_waiting(self):
+        self.curr_state = self.waiting

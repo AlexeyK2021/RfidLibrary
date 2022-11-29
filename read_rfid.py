@@ -4,7 +4,6 @@ import RPi.GPIO as GPIO
 from mfrc522 import MFRC522
 
 import work_state
-import work_state as ws
 from rfid_reader import rfid_reader
 from db_manager import db_manager
 
@@ -51,7 +50,9 @@ def end_transaction():
 def gpio_handling():
     try:
         while ws.curr_state != ws.off:
-            if GPIO.input(23):
+            if GPIO.input(23) and GPIO.input(24):
+                ws.switch_off()
+            elif GPIO.input(23):
                 ws.take_button()
             elif GPIO.input(24):
                 ws.return_button()

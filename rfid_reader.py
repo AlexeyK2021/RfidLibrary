@@ -17,6 +17,6 @@ class rfid_reader:
         text = ""
         card_id, text = self.reader.read()
         if text.startswith("stop"):
-            self.ws.switch_off()
+            self.ws.switch_waiting()
             return
         self.on_new_card_read(card_id, text)
