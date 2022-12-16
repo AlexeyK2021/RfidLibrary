@@ -1,35 +1,23 @@
 import time
 
-from RPi.GPIO import GPIO
+from RPi import GPIO
+from mfrc522 import SimpleMFRC522
 
 
-def blink():
-    GPIO.output(7, GPIO.HIGH)
-    time.sleep(1)
-    GPIO.output(7, GPIO.LOW)
-    time.sleep(1)
+def read_card(card_id, text):
+    print(card_id, text)
 
 
-def setup():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(7, GPIO.OUT)
-    GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-
-def loop():
-    blink()
-    if GPIO.input(11):
-        return False
-    return True
-
-
-def reset():
+def on_shutdown():
     GPIO.cleanup()
+    exit(1)
 
 
 if __name__ == "__main__":
-    setup()
-    isWork = True
-    while isWork:
-        isWork = loop()
-    reset()
+    reader = SimpleMFRC522()
+    while True:
+        print(reader.read())
+
+# user card ids: 584190577720, 388763356111
+# books card ids: 584184339214, 584199150572, 584188336961, 584187943751, 584185977637
+# stop card id: 1047968420567

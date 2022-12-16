@@ -1,7 +1,6 @@
 import time
 
 import RPi.GPIO as GPIO
-from mfrc522 import MFRC522
 
 import work_state
 from rfid_reader import rfid_reader
@@ -59,7 +58,7 @@ def gpio_handling():
             elif ws.curr_state != ws.waiting:
                 rfid.read_rfid_card_forever_loop()
             switch_leds()
-            print(ws.curr_state)
+            # print(ws.curr_state)
             time.sleep(0.5)
         on_shutdown()
     except KeyboardInterrupt:
@@ -92,7 +91,7 @@ def on_shutdown():
     GPIO.output(17, GPIO.LOW)
     GPIO.output(27, GPIO.LOW)
     GPIO.cleanup()
-    exit(1)
+    exit(0)
 
 
 def show_all_cards():

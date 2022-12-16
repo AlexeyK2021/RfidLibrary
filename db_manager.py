@@ -18,21 +18,14 @@ class db_manager:
                 host=hostname,
                 user=username,
                 passwd=password,
-                database="library"
+                database="rfid_lib"
             )
             print("Connection to MySQL DB successful")
         except Error as e:
             print(f"The error '{e}' occurred")
 
-    def getAll(self):
-        show_db_query = "SELECT * FROM user_book;"
-        with self.connection.cursor() as cursor:
-            cursor.execute(show_db_query)
-            for db in cursor:
-                print(db)
-
     def client_take_books(self, client_card_id, books_card_ids):  # Клиент получает книги
-        query = """INSERT INTO user_book(user_card_id, book_card_id, transaction_type) VALUES (%s, %s, 'take');"""
+        query = """SELECT ChangeStatus(%s, %s);"""
         data = []
 
         for book in books_card_ids:
@@ -42,12 +35,12 @@ class db_manager:
         self.connection.cursor().close()
         self.connection.commit()
 
-    def client_return_books(self, client_card_id, books_card_ids):  # Клиент возвращает книги
-        query = """INSERT INTO user_book(user_card_id, book_card_id, transaction_type) VALUES (%s, %s, 'return');"""
+    def client_return_books(self, client_card_id, books_card_ids):  # Клиент возвращает книги. user_card_id = -1
+        query = """SELECT ChangeStatus(%s, %s);"""
         data = []
 
         for book in books_card_ids:
-            data.append((client_card_id, book))
+            data.append((-1, book))
 
         self.connection.cursor().executemany(query, data)
         self.connection.cursor().close()

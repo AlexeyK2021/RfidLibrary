@@ -7,12 +7,14 @@
     <list default="true" id="e3be9538-dd32-4d99-a129-f8a775d8e42f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/RtosCoursework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RtosCoursework.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a0c0b56-3caf-422a-8183-e3f0d974f7a0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8a0c0b56-3caf-422a-8183-e3f0d974f7a0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read_rfid.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_rfid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfid_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfid_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_gpio.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_gpio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/media/alexey/2C56919356915F00/Prog/Python/RfidLibrary&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -158,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.read_rfid_PI" />
         <item itemvalue="Python.test_gpio" />
+        <item itemvalue="Python.read_rfid_PI" />
       </list>
     </recent_temporary>
   </component>
@@ -194,30 +201,26 @@
       <workItem from="1669225350578" duration="2678000" />
       <workItem from="1669556475257" duration="116000" />
       <workItem from="1669711913753" duration="974000" />
-      <workItem from="1669715241328" duration="1540000" />
+      <workItem from="1669715241328" duration="3087000" />
+      <workItem from="1670779751509" duration="1532000" />
+      <workItem from="1670784899012" duration="47000" />
+      <workItem from="1671119820197" duration="1728000" />
+      <workItem from="1671197952034" duration="82000" />
+      <workItem from="1671198050784" duration="2843000" />
+      <workItem from="1671203882014" duration="4282000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/read_rfid.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RfidLibrary$main.coverage" NAME="main Coverage Results" MODIFIED="1665580210271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RfidLibrary$db_manager.coverage" NAME="db_managerPi Coverage Results" MODIFIED="1668687466283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RfidLibrary$mainRPi.coverage" NAME="mainRPi Coverage Results" MODIFIED="1669712588255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RfidLibrary$RPi.coverage" NAME="RPi Coverage Results" MODIFIED="1665579451547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/RfidLibrary$read_rfid_PI.coverage" NAME="read_rfid_PI Coverage Results" MODIFIED="1668691381111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RfidLibrary$mainRPi.coverage" NAME="mainRPi Coverage Results" MODIFIED="1671207813366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RfidLibrary$main.coverage" NAME="main Coverage Results" MODIFIED="1665580210271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RfidLibrary$test_gpio.coverage" NAME="test_gpio Coverage Results" MODIFIED="1671199558158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RfidLibrary$RPi.coverage" NAME="RPi Coverage Results" MODIFIED="1665579451547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/RfidLibrary$db_manager.coverage" NAME="db_managerPi Coverage Results" MODIFIED="1668687466283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RfidLibrary$read_rfid.coverage" NAME="read_rfid_PI Coverage Results" MODIFIED="1668688177094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
